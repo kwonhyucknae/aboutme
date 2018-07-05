@@ -1,2 +1,58 @@
 @charset "EUC-KR";
 
+
+html, body {
+    background-color: #87b39d;
+    height: 100%;
+    color: #2f2f2f;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+header, section, footer {
+    background-color: #fff;
+    margin: 1em 0;
+    margin-right:10%;
+    margin-left:10%;
+    padding: 0.5em;
+}
+
+header nav{
+	text-align:right;
+	
+
+}
+header nav ul li {
+	display:inline;
+}
+
+
+.btn{
+	width:100px;
+	height:30px;
+	margin:2px;
+}
+.box-front{
+	display:inline-block;
+	border:1px solid;
+	padding:30px;
+	margin:5px;
+	width:100px;
+
+}
+
+.hover:hover{
+	color:#aaa;
+}
+
+.shadow{
+	box-shadow:1px 1px 10px;
+}
+
+.map-img{
+	width:80%;
+	height:600px;
+	margin:30px;
+}
+
