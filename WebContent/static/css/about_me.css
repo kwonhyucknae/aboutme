@@ -69,7 +69,8 @@ header nav ul li {
 
 .box-front > p{
 	color:#ffffff;
-	
+	font-size:20px;
+	font-weight:bold;
 }
 
 .hover:hover{
