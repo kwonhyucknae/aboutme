@@ -78,6 +78,18 @@ footer p{
 	text-align:left;
 }  
 
+.pj-title{
+	text-align:left;
+	font-size:25px;
+
+}
+.pj-subtitle{
+	font-size:20px;
+	font-weight:bold;
+}
+.pj-subtitle:before{
+	content:"бс";
+}
 
 
 .btn{
