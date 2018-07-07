@@ -1,6 +1,9 @@
 package download;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Set;
@@ -25,7 +28,8 @@ public class DownloadFile extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String filename=request.getParameter("filename");
+		//String filename=request.getParameter("filename");
+		String filename="test.pdf";
 		
 		//String uploadFilePath="./static/file/portfolio.pptx";
 		//URL res = getClass().getClassLoader().getResource("/static/file");
@@ -47,6 +51,40 @@ public class DownloadFile extends HttpServlet {
 		if(file.exists())
 		{
 			System.out.println("있어");
+			
+			try {
+				
+				long fileSize=file.length();
+				
+				response.setContentType("application/pdf");
+				response.setContentLength((int)fileSize);
+				
+				response.setHeader("Content-Disposition", "attachment; fileName="+filename+";");
+				response.setHeader("Content-Length", String.valueOf(fileSize));
+				
+				byte b[] =new byte[(int)fileSize];
+				
+				BufferedInputStream ins = new BufferedInputStream(new FileInputStream(file));
+				
+				BufferedOutputStream outs = new BufferedOutputStream(response.getOutputStream());
+				
+				int read=0;
+				
+				while((read=ins.read())!= -1)
+				{
+					outs.write(read);
+				}
+				outs.flush();
+				outs.close();
+				ins.close();
+				
+				
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+				System.out.println("예외 발생");
+			}
+		
 		}
 		else {
 			System.out.println("없어");
