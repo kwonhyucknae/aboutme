@@ -41,7 +41,7 @@ public class DownloadFile extends HttpServlet {
 
 		//System.out.println(pathSet);	
 		
-		String pdfPath = request.getSession().getServletContext().getRealPath("/static/file/portfolio.pdf");
+		String pdfPath = request.getSession().getServletContext().getRealPath("/static/file/portfolio_1.pdf");
 		//System.out.println(pdfPath);
 		//System.out.println(new File(pdfPath).exists());
 		
