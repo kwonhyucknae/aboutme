@@ -43,7 +43,6 @@ footer p{
 	margin-top:50px;
 }
 
-
 .photo > div:nth-of-type(1) >img{
 	float:left;
 	width: 350px;
@@ -58,7 +57,6 @@ footer p{
 	overflow:hidden;
 	text-align:left;
     
-}
 
 .btn{
 	width:100px;
