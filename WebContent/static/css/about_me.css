@@ -63,11 +63,17 @@ header nav ul li {
 	padding:30px;
 	margin:5px;
 	width:100px;
+	background-color:#4794ad;
 
 }
 
+.box-front > p{
+	color:#ffffff;
+	
+}
+
 .hover:hover{
-	color:#aaa;
+	color:#ff8000;
 }
 
 .shadow{
