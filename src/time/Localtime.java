@@ -28,15 +28,18 @@ public class Localtime extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		LocalDateTime lt=LocalDateTime.now();
 		System.out.println(lt.getYear()+":"+lt.getMonthValue()+":"+lt.getDayOfMonth()+":"+lt.getHour()+":"+lt.getMinute());
+		out.print("<html>");
 		
-		out.print("<a href=\"/index.html?v=3\">메인화면</a>");
+		out.print("<body>");
+		out.print("<a href=\"/test5/index.html?v=3\">메인화면</a>");
 		out.print("<br/>");
 		out.print("<br/>");
 		out.print("<br/>");
 		out.print("<br/>");
 		
-		out.print("<h2 style='text-align=center; padding=200px;'">"+lt.getYear()+":"+lt.getMonthValue()+":"+lt.getDayOfMonth()+":"+lt.getHour()+":"+lt.getMinute()+"</h2>");
-		
+		out.print("<h2 style='text-align:center; padding:200px;'>" + lt.getYear()+ ":" + lt.getMonthValue()+":"+lt.getDayOfMonth()+":"+lt.getHour()+":"+lt.getMinute()+"</h2>");
+		out.print("</body>");
+		out.print("</html>");
 	}
 
 
