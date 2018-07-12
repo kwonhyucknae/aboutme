@@ -134,6 +134,51 @@ project facet -> 다이나믹과 자바 클릭 후 완료
 
 
 
+# javadoc 주석과 일반 클래스 주석 달기
+
+
+1) JavaDoc주석을 사용하는 경우  /** */
+	
+     Interface, Class, 멤버함수와 변수 바로 위에서 선언
+     
+     JavaClass의 Document를 자동 생성하여 활용하는 경우 필요한 정보를
+     
+     기술합니다. 작성된 Document는 이후 이해하기 쉬운 용어를 이용하여 기술합니다.
+     
+2) 일반Class 주석을 사용하는 경우
+
+     코드 그 자체로 쉽게 이해할 수 없는 부분을 자세히 설명해 준다. 코드 내에서
+     
+     사용되는 변수의 의미 설명을 한다
+     
+   // 기본적으로 멀티라인 주석을 사용하는 것을 원칙으로 하나 임시로 사용하거나
+           
+      간단한주석처리 시 사용
+   /* */ 
+      더 이상 적용하지 않는 코드 라인들에 코멘트처리를 하거나 Method 안의
+      변수 또는 코드에 주석을 달고자 할 때 사용
+	
+
+파라미터 사용법
+
+	/**
+	 * @see class_name : "See also"라는 항목을 만들어 해당 클래스와 연결해준다.
+	 * @see class_name#method_name : "See also"라는 항목을 만들어 특정 메소드와 연결해준다.
+	 * @version text : HTML 파일의 버전을 표시하는 항목을 만들어 준다.
+	 * @author text : HTML 파일의 저자를 표시하는 항목을 만들어 준다. 
+	 *
+	 * @param name description : 특정 메소드가 취하는 파라메터를 기술할 때 사용된다.
+	 * @return description : 특정 메소드의 리턴값을 기술할 때 사용된다.
+	 * @exception class_name : 특정 메소드가 발생시킬 수 있는 에외상황을 기술할 때 사용된다.
+	*/
+
+
+![image](https://user-images.githubusercontent.com/18182656/42613861-076708fe-85de-11e8-8c22-7b1432b6efe3.png)
+
+
+
+출처: http://wjsb.tistory.com/26 [우주신비 드림 팩토리]
+
 
 
 
