@@ -1,4 +1,4 @@
-# aboutme
+﻿# aboutme
 
 
 자기 소개 웹 페이지 입니다.
@@ -173,7 +173,7 @@ project facet -> 다이나믹과 자바 클릭 후 완료
 	*/
 
 
-![image](https://user-images.githubusercontent.com/18182656/42613861-076708fe-85de-11e8-8c22-7b1432b6efe3.png)
+![image](https://user-images.githubusercontent.com/18182656/42613829-e5059276-85dd-11e8-9907-19f64c6abb66.png)
 
 
 
