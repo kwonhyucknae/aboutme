@@ -82,6 +82,37 @@ pdf 파일 다운로드
 
 </pre></code>
 
+DateTimeFormatter를 static 을 이용해 전역 변수로 만들어 성능 향상을 시킨 코드입니다.
+
+<pre><code>
+
+	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
+	
+</pre></code>
+
+ DateTimeFormatter 객체를 static final 로 사용한 이유 입니다.
+ 서블릿은 요청이 들어올 때 마다 쓰레드를 호출하게 됩니다.
+ 각각의 쓰레드는 스택 메모리를 가지고 있는데 모든 쓰레드에서 ofPattern 함수를 호출하게 되면 
+ 각각의 스택에 메모리가 쌓이면서 성능이 저하 될 거라고 생각했습니다.
+ 따라서 미리 static 전역 변수로 설정을 해서 모든 쓰레드들이 이미 만들어져 있는
+ DateTimeFormatter 객체를 공동으로 사용해서 성능의 향상을 생각했습니다.
+  
+ 이 때 많은 쓰레드들이 동시에 DateTimeFormatter 객체를 사용할 때를 생각해봐야하는데
+ DateTimeFormatter 의 javadoc 을 봐보게 되면 마지막 부분에 
+ This class is immutable and thread-safe. 라는 것을 볼 수가 있었습니다.
+ thread-safe 하다는 것이 뭔지 찾아보니 임계 영역을 사용하려고 할 때 뮤텍스등으로 
+ 공유 자원을 보호 해서 쓰레드를 사용해도 안전하다고 되어있었습니다.
+ 따라서 개발자가 임계 영역을 따로 관리 하지 않고 사용해도 괜찮다고 되어있어서
+ static 으로 DateTimeFormatter를 전역 변수로 사용해 미리 만들어 놓고 사용했습니다.
+  
+ final 을 사용한 이유는 format 형식이 이 프로젝트에서는 바뀌지 않기 때문에 사용해줬습니다.
+  
+  
+ 크롬 개발자 도구를 사용해 성능을 측정해보니 load 하는데 static final 을 사용했을때는 11ms로 불러오고
+ static final 을 사용하지 않았을 때는 12ms 로 불러와서 조금 더 빠른 속도로 불러오는 것을 볼 수 있었습니다.
+ 한 번 불러올 때는 속도 차이가 크지 않지만 동시에 많은 요청이 들어왔을때는 속도차이가 더 크게 날 것이라 생각합니다. 
+
+
 
 # 톰캣 에러 해결과정
 
