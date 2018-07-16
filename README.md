@@ -119,9 +119,13 @@ DateTimeFormatter를 static 을 이용해 전역 변수로 만들어 성능 향�
  
  static 으로 DateTimeFormatter를 전역 변수로 사용해 미리 만들어 놓고 사용했습니다.
  
+ <br/>
+ 
   
  final 을 사용한 이유는 format 형식이 이 프로젝트에서는 바뀌지 않기 때문에 사용해줬습니다.
-  
+ 
+ <br/>
+ 
   
   
  크롬 개발자 도구를 사용해 성능을 측정해보니 load 하는데 static final 을 사용했을때는 11ms로 불러오고
